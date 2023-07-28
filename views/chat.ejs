@@ -1,0 +1,70 @@
+=   <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Document</title>
+        <link rel="stylesheet" href="/css/chat.css">
+    </head>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <body>
+
+        <input type="hidden" id="activeChat" value="<%= stuff.query.user %>">
+        <div class="container">
+            <div class="leftSide">
+                <!-- header -->
+                <div class="header">
+                    <div class="userimg">
+                        <a href="#"><ion-icon name="arrow-back-outline"></ion-icon></a>
+                    </div>
+                    <ul class="nav_icons">
+                        <li><ion-icon name="chatbox"></ion-icon></li>
+                        <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
+                    </ul>
+                </div>
+                <!-- chat list -->
+                <div class="chatlist" id="chatList">
+                </div>
+            </div>
+
+            <div class="rightSide">
+                <div class="header">
+                    <div class="imgText">
+                        <div class="userimg">
+                            <span class="material-icons cover">
+                                account_circle
+                            </span>
+                        </div>
+                        <h4 id="person-name"></h4>
+                    </div>
+                    <ul class="nav_icons">
+                        <a href="#" class="default-btn">Block</a>
+                    </ul>
+                </div>
+                <!-- chat box -->
+                <div class="chatBox" id="chatBox">
+                </div>
+                <!-- chat input -->
+                <div class="chatbox_input">
+                    <a target="_blank"href="https://www.google.co.in/maps/search/library+near+me"><ion-icon name="location-outline"> </ion-icon></a>
+                    <input type="text" placeholder="Type a message" id="message">
+                    <ion-icon name="send" onclick="sendMessage()"></ion-icon>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script>
+        console.log(document.getElementById('activeChat').value);
+    </script>
+    <script src="/js/chat.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    </html>
